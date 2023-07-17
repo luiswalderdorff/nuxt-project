@@ -4,16 +4,11 @@
       <h4 class="text-center mb-5"><strong>Product listing</strong></h4>
 
       <div class="row">
-        <div class="col-lg-4 col-md-12 mb-4" v-for="product in products" :key="product.id">
+        <div class="col-lg-4 col-md-12 mb-4 position-relative" v-for="product in products" :key="product.id">
           <nuxt-link :to="`/details/${product.id}`">
             <img :src="product.thumbnail"
-                 class="w-100" />
-              <div class="product-container">
-                <div class="d-flex justify-content-between align-items-center h-100 px-2">
-                  <h5 class="mb-0"><span class="badge bg-light text-dark mb-2 mt-2">${{ product.price }}</span></h5>
-                  <h5 class="mb-0"><span class="badge bg-light text-dark">{{ product.title }}</span></h5>
-                </div>
-              </div>
+                 class="w-100 bg-image hover-zoom ripple shadow-1-strong rounded"/>
+            <h5 class="mb-0 product-price"><span class="badge bg-light text-dark mb-2 mt-2">${{ product.price }}</span></h5>
           </nuxt-link>
         </div>
 
@@ -45,7 +40,9 @@ img {
   height: 250px;
 }
 
-.product-container {
-  background-color: rgba(0, 0, 0, 0.3);
+.product-price {
+  position: absolute;
+  top: 10px;
+  left: 22px;
 }
 </style>
