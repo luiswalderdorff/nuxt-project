@@ -29,7 +29,6 @@ export default {
     const response = await fetch('https://dummyjson.com/products');
     const responseJSON = await response.json();
     this.products = responseJSON.products;
-    console.log(this.products)
   }
 };
 </script>
